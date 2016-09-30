@@ -1,0 +1,28 @@
+1;Could not detect OS Name.
+2;Could not detect Windows Version.
+3;Could not detect OS Architecture.
+4;Could not detect OS Language.
+5;OS Language not recognized.
+6;Could not detect OS Locale Languge
+7;OS Locale Language not recognized.
+8;Program needs admin rights to run.
+9;Windows Version not supported.
+10;BackUp folder already exists wait a minute before retrying.
+11;No IP address list could be found. Please create one in the same folder as the program, format is DeviceName,DeviceIP,FTPUsername,FTPPassword,# e.g. 10R1,138.186.6.1,,,#
+12;Could not copy or load IP address list.
+13;Failed to zip the downloaded files.
+14;Failed to add the log file to the .zip backup.
+15;Couldn't create folder.
+16;Couldn't delete folder.
+17;Couldn't write device data to temp file.
+18;Error 18
+19;Error 19
+20;./bin folder not found.
+21;./bin/NcFtpLs.exe not found.
+22;./bin/NcFtpGet.exe not found.
+23;./bin/Downloader.bat routine not found.
+24;./bin/zip.exe not found.
+25;Error 25
+26;Error 26
+27;CSV file [ !_CsvFile!.csv ] not found.
+28;Firewall rule missing, please run the firewall tool as administrator.

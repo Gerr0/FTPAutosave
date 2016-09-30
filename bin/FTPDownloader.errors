@@ -1,0 +1,24 @@
+1;Could not detect OS Name.
+2;Could not detect Windows Version.
+3;Could not detect OS Architecture.
+4;Could not detect OS language.
+5;OS Language not recognized.
+6;Could not detect OS Locale Languge
+7;OS Locale Language not recognized.
+8;Program needs admin rights to run.
+9;Windows Version not supported.
+10;Error 10
+11;Device IP Address Not Set. Can't Continue.
+12;Root Backup folder not set. Can't Continue.
+13;Error 13
+14;Error 14
+15;Couldn't create folder.
+16;Couldn't delete folder.
+17;Error 17
+18;Error 18
+19;Error 19
+20;./bin folder not found.
+21;./bin/NcFtpLs.exe not found.
+22;./bin/NcFtpGet.exe not found.
+23;/DevData file not received as argument.
+24;Device data file not found.
