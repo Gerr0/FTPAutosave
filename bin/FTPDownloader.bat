@@ -12,7 +12,7 @@ REM ----------------------------------------------------------------------------
 SET _DebugStep=PROGRAM DATA& IF !_Debug! EQU TRUE (ECHO.#!_DebugStep!& @ECHO OFF)
 REM ----------------------------------------------------------------------------------
 SET _ProgOriginDate=20120614& REM <Project Start Date>
-SET _ProgLastModDate=20160618_1020& REM <Last Modification Date>
+SET _ProgLastModDate=20160930_0215& REM <Last Modification Date>
 SET _ProgName=FTPDownloader& REM <Program name>
 SET _ProgVersion=!_ProgLastModDate!& REM <Program version or release>
 SET _ProgDesc1=Script to count and download all
@@ -310,7 +310,7 @@ IF !_PingOK! EQU TRUE (
 	CALL:P ---Running NcFTPGet.exe
 	CALL:P
 	PUSHD "!_BkpDir!/!_DeviceDir!"
-	"!_BinFolder!\ncftpget.exe" -R -T -X binary -u !_DeviceUsername! -p !_DevicePwd! -d "!_LogFile!" !_DeviceIpAddress! "!_BkpDir!/!_DeviceDir!" *.*
+	"!_BinFolder!\ncftpget.exe" -R -T -u !_DeviceUsername! -p !_DevicePwd! -d "!_LogFile!" !_DeviceIpAddress! "!_BkpDir!/!_DeviceDir!" *.*
 	FOR %%H IN (*) DO (SET /A _DownloadedFiles+=1)
 	POPD
 	CALL:P [ !_DeviceName! ] finished Downloading.
