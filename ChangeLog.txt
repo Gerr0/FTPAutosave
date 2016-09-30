@@ -1,0 +1,15 @@
+FTPAutosave ChangeLog
+
+06/18/2016
+	+Renamed to FTPAutosave.
+	+Arguments are now passed to downloader by file instead of memory.
+	+Updated to Template 1.4
+		-Moved Admin check to start of file to correct current directory if needed.
+		-Added OS Language detection.
+
+09/06/2016
+	+Fixed downloaded file counting bug.
+	+Added Incomplete results to count on title on finish.
+
+09/30/2016
+	+Added log folder creation.
