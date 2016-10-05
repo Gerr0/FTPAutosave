@@ -12,7 +12,7 @@ REM ----------------------------------------------------------------------------
 SET _DebugStep=PROGRAM DATA& IF !_Debug! EQU TRUE (ECHO.#!_DebugStep!& @ECHO OFF)
 REM ------------------------------------------------------------------------------------------------
 SET _ProgOriginDate=20120615& REM <Project Start Date>
-SET _ProgLastModDate=20161005_0140& REM <Last Modification Date>
+SET _ProgLastModDate=20161005_0205& REM <Last Modification Date>
 SET _ProgName=FTPAutosave& REM <Program name>
 SET _ProgVersion=!_ProgLastModDate!& REM <Program version or release>
 SET _ProgDesc1=Program copies files in FTP servers
@@ -557,7 +557,7 @@ IF !_AllDevicesFiles! GTR 0 (
 	PUSHD "!_BkpDir!"
 		FOR /F %%a IN ('DIR /b /s') DO SET /A _TotalFiles+=1
 	POPD
-	CALL:P -------------STARTING COMPRESION---------------
+	CALL:P -------------STARTING COMPRESSION--------------
 	CALL:P
 	CALL:P Compressing files...
 	CALL:P --[ !_TotalFiles! ] Files to add to zip.
