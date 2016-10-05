@@ -12,11 +12,11 @@ REM ----------------------------------------------------------------------------
 SET _DebugStep=PROGRAM DATA& IF !_Debug! EQU TRUE (ECHO.#!_DebugStep!& @ECHO OFF)
 REM ------------------------------------------------------------------------------------------------
 SET _ProgOriginDate=20120615& REM <Project Start Date>
-SET _ProgLastModDate=20160930_0150& REM <Last Modification Date>
+SET _ProgLastModDate=20161005_0140& REM <Last Modification Date>
 SET _ProgName=FTPAutosave& REM <Program name>
 SET _ProgVersion=!_ProgLastModDate!& REM <Program version or release>
 SET _ProgDesc1=Program copies files in FTP servers
-SET _ProgDesc2=such as Fanuc Robot controllers, and
+SET _ProgDesc2=such as Fanuc Robot controllers and
 SET _ProgDesc3=zips the copied files to a single file.
 SET _ProgNeedsAdmin=FALSE& REM <Change as needed>
 TITLE=!_ProgName! v!_ProgVersion!
@@ -168,9 +168,11 @@ REM ----------------------------------------------------------------------------
 WMIC OS GET OSLANGUAGE|FIND /I /V "OSLanguage">!_TmpFile! && SET /P _OSLangDec=<!_TmpFile!
 FOR /F %%E IN ("!_OSLangDec!") DO (SET _OSLangDec=%%E)
 IF NOT DEFINED _OSLangDec (SET _ErrorNum=4& GOTO:ERROR) ELSE (
+	CALL:PL OS Language Code: [ !_OSLangDec! ]
 	IF !_OSLangDec! EQU 1033 (SET _OSLang=ENG)& REM <US English>
 	IF !_OSLangDec! EQU 4105 (SET _OSLang=ENG)& REM <Canada English>
 	IF !_OSLangDec! EQU 2058 (SET _OSLang=SPA)& REM <Mexico Spanish>
+	REM <Language not detected, translations not implemented yet, bypass as needed>
 	IF NOT DEFINED _OSLang (SET /A _ErrorNum=5& GOTO:ERROR)
 )
 CALL:PL OS Language: [ !_OSLang! ]
@@ -180,9 +182,11 @@ REM ----------------------------------------------------------------------------
 WMIC OS GET LOCALE|FIND /I /V "Locale">!_TmpFile! && SET /P _OSLocaleHex=<!_TmpFile!
 FOR /F %%E IN ("!_OSLocaleHex!") DO (SET _OSLocaleHex=%%E)
 IF NOT DEFINED _OSLocaleHex (SET ErrorNum=6& GOTO:ERROR) ELSE (
+	CALL:PL OS Locale Code: [ !_OSLocaleHex! ]
 	IF !_OSLocaleHex! EQU 0409 (SET _OSLocaleLang=ENG)& REM <US English>
 	IF !_OSLocaleHex! EQU 1009 (SET _OSLocaleLang=ENG)& REM <Canada English>
-	IF  !_OSLocaleHex! EQU 080a (SET _OSLocaleLang=SPA)& REM <Mexico Spanish>
+	IF !_OSLocaleHex! EQU 080a (SET _OSLocaleLang=SPA)& REM <Mexico Spanish>
+	REM <Language not detected, translations not implemented yet, bypass as needed>
 	IF NOT DEFINED _OSLocaleLang (SET _ErrorNum=7& GOTO:ERROR)
 )
 CALL:PL OS Locale language: [ !_OSLocaleLang! ]

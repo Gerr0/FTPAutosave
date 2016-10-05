@@ -13,3 +13,6 @@ FTPAutosave ChangeLog
 
 09/30/2016
 	+Added log folder creation.
+
+10/05/2016
+	+Added language code detection to data logging.
